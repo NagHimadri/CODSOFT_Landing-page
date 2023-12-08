@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /* navbar css */
+    nav{
+        /* border: 1px solid red; */
+        height: 70px;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    nav>div{
+        color: white;
+    }
+    .logo>img{
+        height: 70px;
+    }
+    .options{
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+    }
+    .options>h4:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: rgb(191, 241, 116);
+        color: rgb(173, 161, 149);
+    }
+    .connect{
+        display: flex;
+        gap: 10px;
+        font-size: 18px;
+    }
+    .connect>p:hover{
+        color: grey;
+        cursor: pointer;
+    }
+    @media all and (min-width:546px) and (max-width:750px){
+        nav{
+            width: 100%;
+            height: 140px;
+            display: block;
+        }
+        .logo>img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .options{
+            justify-content: space-between;
+            padding-bottom: 15px;
+            font-size: 15px;
+        }
+        .connect>p{
+            margin: auto;
+            font-size: 25px;
+        }
+    }
+    @media all and (min-width:450px) and (max-width:545px){
+        nav{
+            width: 160%;
+            height: 140px;
+            display: block;
+        }
+        .logo>img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .options{
+            justify-content: space-between;
+            padding-bottom: 15px;
+            font-size: 15px;
+        }
+        .connect>p{
+            margin: auto;
+            font-size: 25px;
+        }
+    }
+    @media all and (min-width:250px) and (max-width:450px){
+        nav{
+            width: 160%;
+            height: 160px;
+            display: block;
+        }
+        .logo>img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .options{
+            justify-content: space-between;
+            padding-bottom: 25px;
+            font-size: 15px;
+        }
+        .connect>p{
+            margin: auto;
+            font-size: 25px;
+        }
+    }
+
+    /* caruser css */
+    .caruser{
+        width: 100%;
+        /* position: absolute; */
+    }
+    .caruser>img{
+        height: 600px;
+        width: 100%;
+        position: relative;
+    }
+    .caruser>button{
+        position: absolute;
+        top: 48%;
+        background-color: rgb(77, 77, 77, 0.5);
+        border-radius: 100%;
+        font-size: 20px;
+        color: white;
+        width: 50px;
+        height: 50px;
+    }
+    .caruser>button:nth-child(2){
+        left: 5%;
+    }
+    .caruser>button:nth-child(3){
+        right: 5%;
+    }
+    @media all and (min-width: 545px) and (max-width: 750px){
+        .caruser>img{
+            height: 450px;
+        }
+    }
+    @media all and (min-width: 450px) and (max-width: 545px){
+        .caruser{
+            width: 160%;
+        }
+        .caruser>img{
+            height: 400px;
+        }
+    }
+    @media all and (min-width: 250px) and (max-width: 450px){
+        .caruser{
+            width: 160%;
+        }
+        .caruser>img{
+            height: 350px;
+        }
+    }
+    /* product css */
+    #wwo{
+        color: black;text-align: center;padding-top: 25px; font-size: 60px; 
+    }
+    .products{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,500px);
+        gap: 15px;
+    }
+    .product{
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 25px;
+        /* background-color: rgb(163, 162, 162); */
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 60%;
+    }
+    .product>img{
+        width: 100%;
+        height: 350px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .product>h2{
+        cursor: pointer;
+    }
+    @media all and (min-width:545px) and (max-width:750px){
+        .products{
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(1,500px);
+        }
+    }
+    @media all and (min-width: 450px) and (max-width:545px){
+        .products{
+            width: 160%;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(1,500px);
+        }
+        #wwo{
+            width: 160%;
+            font-size: 50px;
+            text-align: center;
+        }
+    }
+    @media all and (min-width: 250px) and (max-width:450px){
+        .products{
+            width: 160%;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(1,500px);
+        }
+        #wwo{
+            width: 160%;
+            font-size: 40px;
+            text-align: center;
+        }
+    }
+    /* revies css */
+    #oc{
+        color: black;text-align: center;padding-top: 25px; font-size: 50px; color: grey;margin-bottom: 35px;
+    }
+    .reviews{
+        display: flex;
+        height: auto;
+        justify-content: space-between;
+        margin-bottom: 150px;
+    }
+    .review{
+        width: 22%;
+        padding: 15px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        color: rgb(96, 95, 95);
+    }
+    .review>p{
+        font-size: 15px;
+    }
+    .review>h4{
+        text-align: center;font-size: 20px;
+    }
+    .review>h6{
+        text-align: center;font-size: 25px;padding-right: 25px;
+    }
+    @media all and (min-width:545px) and (max-width:750px) {
+        
+    }
+    @media all and (min-width:450px) and (max-width:545px) {
+        #oc{
+            width: 160%;
+            text-align: center;
+            font-size: 40px;
+        }
+        .reviews{
+            width: 160%;
+        }
+    }
+    @media all and (min-width:250px) and (max-width:450px) {
+        #oc{
+            width: 160%;
+            text-align: center;
+            font-size: 40px;
+        }
+    }
+    /* footer css */
+    .footer{
+        background-color: #484955;
+        height: 350px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer>.f{
+        width: 30%;
+        height: 300px;
+        text-align: center;
+    }
+    .footer>.f{
+        color: white;
+    }
+    .footer>.f>h1{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .footer>.f>p{
+        font-size: 18px;
+    }
+    .footer>.f>input{
+        width:70%;
+    }
+    .footer>.f>input{
+        width:70%;
+    }
+    .fa{
+        width: 45px;
+        color: white;
+    }
+    /* copyright css */
+    .copyright{
+        height: 20px;
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding: 10px;
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="https://www.shutterstock.com/image-vector/abstract-audio-sound-wave-logo-260nw-1077372167.jpg" alt="">
+        </div>
+        <div class="options">
+            <h4>Headphones</h4>
+            <h4>Soundbars</h4>
+            <h4>Smart watchs</h4>
+            <h4>Charging accesories</h4>
+        </div>
+        <div class="connect">
+            <p>Sign up</p>
+        </div>
+    </nav>
+
+    <div class="caruser">
+        <img class="img" src="https://www.dealsplant.com/cdn/shop/products/dealsplant-bluetooth-headsets-onlite-tw-02-airpod-wireless-headset-13933563379787_600x.jpg?v=1647764213" alt="">
+        <button><</button>
+        <button>></button>
+    </div>
+
+    <h1 id="wwo">What we offers</h1>
+    <div class="products">
+        <div class="product">
+            <img src="https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/nav/collar-flash-pro.png" alt="">
+            <h2>Shop Headphones</h2>
+        </div>
+        <div class="product">
+            <img src="https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/nav/soundbar-s200.png" alt="">
+            <h2>Shop Soundbars</h2>
+        </div>
+        <div class="product">
+            <img src="https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/nav/model-e.png" alt="">
+            <h2>Shop Smart Watches</h2>
+        </div>
+        <div class="product">
+            <img src="https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/nav/ligntning-cable-2.png" alt="">
+            <h2>Charging accesories</h2>
+        </div>
+    </div>
+
+    <h1 id="oc">Our customers love 💝 us</h1>
+    <div class="reviews">
+        <div class="review">
+            <p>Sound Quality Is Just Fabulous And These Buds Are Bass Heavy Also The Noise Cancellation On This Is Amazing. The Touch Is Very Sensitive So Will Take A Couple Of Days To Get Used To The Touch Controls.</p>
+            <h4>5 ⭐</h4>
+            <h6>Anirban Roy</h6>
+        </div>
+        <div class="review">
+            <p>It Managed To Blew My Mind Like Every Time, The Sound Quality Is Too Good - Mids, Lows And Highs Are Balanced As Should Be. Though It Really Has A Good Bass Response - The Type You Feel IRL.</p>
+            <h4>5 ⭐</h4>
+            <h6>Abdul Ansari</h6>
+        </div>
+        <div class="review">
+            <p>The Sound Of Earphones Is Crystal Clear So Is The Bass, The Base Of The Earphones Is Amazing And It Makes The Listening Experience Whole Lot Experience. These Earphones Are Perfect For Gym</p>
+            <h4>5 ⭐</h4>
+            <h6>Rosy Gupta</h6>
+        </div>
+        <div class="review">
+            <p>Have been using it for around 2 years. Great purchase. The speaker is lightweight, small sized and sturdy. You can carry this anywhere easily, place it on any base or even hang it.Sound Quality is excellent.</p>
+            <h4>5 ⭐</h4>
+            <h6>Akhil Lokhande</h6>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="f about">
+            <h1>About us</h1>
+            <p>Sonic, India's first Athleisure tech brand delivers high-quality TWS audio gadgets and fitness bands. Over decades the movement towards Athleisure clothing and devices have given rise to wearables that are contemporary, multifunctional and comfortable yet athletic. 
+                Sonic inspires and promotes an active lifestyle. The monotonous routines of our day jobs make us lethargic, with no time to stay fit, active, and healthy. Hammer switches you into active mode in an instant. Activity keeps you going, with Sonic pumping up the experience for you.
+            </p>
+        </div>
+        <div class="f">
+            <h1>Connect With</h1>
+            <p>Name</p>
+            <input type="text" placeholder="Enter name">
+            <p>Email</p>
+            <input type="email" placeholder="Enter email">
+            <p>Message us</p>
+            <!-- <textarea cols="42" rows="9" placeholder="Enter message for us"></textarea> -->
+            <input type="textarea" placeholder="Enter message for us">
+        </div>
+        <div class="f">
+            <h1>Follow us on</h1>
+            <a href="" class="fa fa-facebook"></a>
+            <a href="" class="fa fa-twitter"></a>
+            <a href="" class="fa fa-instagram"></a>
+            <a href="" class="fa fa-youtube"></a>
+            <h1>Customer service</h1>
+            <p><a href="" class="fa fa-phone"></a>at +918965147232</p>
+            <p><a href="" class="fa fa-whatsapp"></a>at +918754213685</p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright©2023.All Right Reserved By Sonic(me).</p>
+    </div>
+</body>
+</html>
+<script>
+    let img = document.querySelector(".img");
+    let buttons = document.querySelectorAll("button");
+    let imgNum = 0;
+    let imgArray = ["https://www.dealsplant.com/cdn/shop/products/dealsplant-bluetooth-headsets-onlite-tw-02-airpod-wireless-headset-13933563379787_600x.jpg?v=1647764213",
+    "https://cdn.shopify.com/s/files/1/0068/7610/2727/files/Roar_WebsiteBanner_1000x.jpg?v=1676348695",
+    "https://img.freepik.com/premium-psd/mockup-realistic-elegant-smartwatches_85867-74.jpg"];
+    buttons[0].addEventListener("click",function(){
+        if(imgNum===0)
+        {
+            imgNum=imgArray.length-1;
+        }
+        else
+        {
+            imgNum--;
+        }
+        /* img.src=imgArray[imgNum]; */
+        /* we also can do this */
+        img.setAttribute("src",imgArray[imgNum])
+    })
+    buttons[1].addEventListener("click",function(){
+        if(imgNum===imgArray.length-1)
+        {
+            imgNum=0;
+        }
+        else
+        {
+            imgNum++;
+        }
+        img.src=imgArray[imgNum];
+    })
+</script>
